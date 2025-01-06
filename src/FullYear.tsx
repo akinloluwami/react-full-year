@@ -34,13 +34,13 @@ const FullYear: React.FC<FullYearProps> = ({
 
     fetchYear();
   }, []);
-
+   const yearOnly = new Date().getFullYear()
   if (!year) {
     if (loadingComponent) {
       return <>{loadingComponent}</>;
     }
     if (showLoading) {
-      return <p {...props}>Loading...</p>;
+      return <p {...props}>{yearOnly}</p>;
     }
     return null;
   }
