@@ -26,6 +26,7 @@ const FullYear: React.FC<FullYearProps> = ({
       try {
         const response = await fetch("https://getfullyear.com/api/year");
         const data = await response.json();
+        console.log(data.sponsored_by); 
         setYear(data.year_string || String(data.year));
       } catch (error) {
         console.error("Error fetching the year:", error);
